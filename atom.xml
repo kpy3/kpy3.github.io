@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Всячина]]></title>
-  <link href="http://yoursite.com/atom.xml" rel="self"/>
-  <link href="http://yoursite.com/"/>
-  <updated>2013-10-03T21:21:47+02:00</updated>
-  <id>http://yoursite.com/</id>
+  <link href="http://kpy3.github.io/atom.xml" rel="self"/>
+  <link href="http://kpy3.github.io/"/>
+  <updated>2013-10-03T21:56:24+02:00</updated>
+  <id>http://kpy3.github.io/</id>
   <author>
     <name><![CDATA[Сергей Елин]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Как собрать Erlang c wxWidgets на MacOS X 10.8.x]]></title>
-    <link href="http://yoursite.com/blog/2013/10/03/kak-sobrat-erlang-c-wxwidgets-na-macos-x-10-dot-8-x/"/>
+    <link href="http://kpy3.github.io/blog/2013/10/03/kak-sobrat-erlang-c-wxwidgets-na-macos-x-10-dot-8-x/"/>
     <updated>2013-10-03T17:05:00+02:00</updated>
-    <id>http://yoursite.com/blog/2013/10/03/kak-sobrat-erlang-c-wxwidgets-na-macos-x-10-dot-8-x</id>
+    <id>http://kpy3.github.io/blog/2013/10/03/kak-sobrat-erlang-c-wxwidgets-na-macos-x-10-dot-8-x</id>
     <content type="html"><![CDATA[<p>UPDATE: Решение проверено и работает на MacOS X 10.8.5 и XCode/CLT 4.6.3. На XCode/CLT 5.0 beta и MacOS X 10.9 Maverics работать не будет.</p>
 
 <p>У Erlang есть специальное средство получения различных характеристик локальной или удалённой ноды &ndash; observer. Штука замечательная, однако, требующая библиотеки wxWidgets, что затрудняет использование данного инструмента на MacOS X, так как официальные релизы последней не очень-то хорошо работают на MacOS X  в 64-bit режиме.  Поэтому сборки Erlang для MacOS X как правило поставляются либо без wx, либо с wx, но он всё равно не работает так как не хватает необходимых библиотек. Ситуация неприятная, но не безнадёжная.</p>
