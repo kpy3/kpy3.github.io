@@ -4,7 +4,7 @@
   <title><![CDATA[Category: wxWidgets | Всячина]]></title>
   <link href="http://kpy3.github.io/blog/categories/wxwidgets/atom.xml" rel="self"/>
   <link href="http://kpy3.github.io/"/>
-  <updated>2013-10-04T11:04:32+02:00</updated>
+  <updated>2013-10-04T17:34:16+02:00</updated>
   <id>http://kpy3.github.io/</id>
   <author>
     <name><![CDATA[Сергей Елин]]></name>
@@ -18,110 +18,105 @@
     <link href="http://kpy3.github.io/blog/2013/10/03/kak-sobrat-erlang-c-wxwidgets-na-macos-x-10-dot-8-x/"/>
     <updated>2013-10-03T17:05:00+02:00</updated>
     <id>http://kpy3.github.io/blog/2013/10/03/kak-sobrat-erlang-c-wxwidgets-na-macos-x-10-dot-8-x</id>
-    <content type="html"><![CDATA[<p>UPDATE: Решение проверено и работает на MacOS X 10.8.5 и XCode/CLT 4.6.3. На XCode/CLT 5.0 beta и MacOS X 10.9 Maverics работать не будет.</p>
+    <content type="html"><![CDATA[<p><em>UPDATE</em>: Решение проверено и работает на MacOS X 10.8.5 и XCode/CLT 4.6.3. На XCode/CLT 5.0 beta и MacOS X 10.9 Maverics работать не будет.</p>
 
 <p>У Erlang есть специальное средство получения различных характеристик локальной или удалённой ноды &ndash; observer. Штука замечательная, однако, требующая библиотеки wxWidgets, что затрудняет использование данного инструмента на MacOS X, так как официальные релизы последней не очень-то хорошо работают на MacOS X  в 64-bit режиме.  Поэтому сборки Erlang для MacOS X как правило поставляются либо без wx, либо с wx, но он всё равно не работает так как не хватает необходимых библиотек. Ситуация неприятная, но не безнадёжная.</p>
 
 <!-- more -->
 
 
-<p>Установка wxWidgets
-Для того чтобы исправить ситуацию необходимо сначала установить wxWidgets версии 2.9.x. Официальная документация рекомендует скачать и установить необходимую версию вручную, однако, я привык полагаться в таких вопросах на менеджеры пакетов, чтобы не получить в будущем каких-либо проблем с разными версиями библиотек.</p>
+<h2>Установка wxWidgets</h2>
 
-<p>Homewbrew, который я использую для управления всякими сторонними программами и библиотеками, предлагает использовать wxmac – несколько урезанную версию wxWidgets для MacOS X. Однако у этого пакета есть одна проблема: если его собрать с опциями по-умолчанию, Erlang не сможет слинковать свой драйвер wxWidgets. Поэтому при сборке wxmac необходимо указать ключик –disable-monolithic:</p>
+<p>Для того чтобы исправить ситуацию необходимо сначала установить wxWidgets версии 2.9.x. Официальная документация рекомендует скачать и установить необходимую версию вручную, однако, я привык полагаться в таких вопросах на менеджеры пакетов, чтобы не получить в будущем каких-либо проблем с разными версиями библиотек.</p>
 
-<p><code>bash [lineos:false]
-$ brew install --disable-monolithic wxmac
-</code></p>
+<p>Homewbrew, который я использую для управления всякими сторонними программами и библиотеками, предлагает использовать wxmac – несколько урезанную версию wxWidgets для MacOS X. Однако у этого пакета есть одна проблема: если его собрать с опциями по-умолчанию, Erlang не сможет слинковать свой драйвер wxWidgets. Поэтому при сборке wxmac необходимо указать ключик <code>–-disable-monolithic</code>:</p>
 
-<p>После сборки с этим флажком вывод wx-config –libs должен выглядеть примерно так:</p>
+<pre><code>$ brew install --disable-monolithic wxmac
+</code></pre>
 
-<p><code>bash [linenos:false]
-$ wx-config --libs
--L/usr/local/Cellar/wxmac/2.9.5.0/lib -framework IOKit
--framework Carbon -framework Cocoa -framework AudioToolbox
--framework System -framework OpenGL -framework QuickTime
--lwx_osx_cocoau_xrc-2.9 -lwx_osx_cocoau_webview-2.9
--lwx_osx_cocoau_html-2.9 -lwx_osx_cocoau_qa-2.9
--lwx_osx_cocoau_adv-2.9 -lwx_osx_cocoau_core-2.9
+<p>После сборки с этим флажком вывод <code>wx-config –libs</code> должен выглядеть примерно так:</p>
+
+<pre><code>$ wx-config --libs
+-L/usr/local/Cellar/wxmac/2.9.5.0/lib -framework IOKit 
+-framework Carbon -framework Cocoa -framework AudioToolbox 
+-framework System -framework OpenGL -framework QuickTime 
+-lwx_osx_cocoau_xrc-2.9 -lwx_osx_cocoau_webview-2.9 
+-lwx_osx_cocoau_html-2.9 -lwx_osx_cocoau_qa-2.9 
+-lwx_osx_cocoau_adv-2.9 -lwx_osx_cocoau_core-2.9 
 -lwx_baseu_xml-2.9 -lwx_baseu_net-2.9 -lwx_baseu-2.9
-</code></p>
+</code></pre>
 
 <p>Всё, wxWidgets установлена как надо, теперь нужно собрать Erlang, который сможет её использовать.</p>
 
-<p>Установка Erlang
-В этой части мы рассмотрим два типа установки Erlang, из homebrew и из исходников. Думаю по приведённым заметкам несложно будет собрать Erlang из других менеджеров пакетов или kerl.</p>
+<h2>Установка Erlang</h2>
 
-<p>Сборка с помощью homebrew
-Чтобы собрать пакет, а не использовать уже собранный, homebrew предоставляет специальный параметр команды install &mdash;build-from-source. Однако этого параметра недостаточно.</p>
+<p>В этой части мы рассмотрим два типа установки Erlang, из homebrew и из исходников. Думаю по приведённым заметкам несложно будет собрать Erlang из других менеджеров пакетов или kerl.</p>
 
-<p>По-умолчанию homebrew накладывает некоторые ограничения на окружение в процессе сборки, поэтому для того чтобы конфигуратор Erlang смог найти установленный в /usr/local wxWidgets необходимо указать параметр &mdash;env=std.</p>
+<h3>Сборка с помощью homebrew</h3>
 
-<p>Кроме того, homebrew соберёт erlang с помощью clang, однако при попытке запустить что-то использующее wxWidgets Erlang VM будет падать. Чтобы избежать этого добавим ещё один параметр &mdash;cc=gcc-4.2.
+<p>Чтобы собрать пакет, а не использовать уже собранный, homebrew предоставляет специальный параметр команды <code>install --build-from-source</code>. Однако этого параметра недостаточно.</p>
+
+<p>По-умолчанию homebrew накладывает некоторые ограничения на окружение в процессе сборки, поэтому для того чтобы конфигуратор Erlang смог найти установленный в <code>/usr/local</code> wxWidgets необходимо указать параметр <code>--env=std</code>.</p>
+
+<p>Кроме того, homebrew соберёт erlang с помощью clang, однако при попытке запустить что-то использующее wxWidgets Erlang VM будет падать. Чтобы избежать этого добавим ещё один параметр <code>--cc=gcc-4.2</code>.
 Полностью строка установки Erlang c помощью homebrew будет выглядеть так:</p>
 
-<p>1
-$ brew -v install &mdash;env=std &mdash;build-from-source &mdash;cc=gcc-4.2 erlang
-Чтобы убедиться что Erlang будет использовать вашу свежесобраную библиотеку wxWidgets внимательно посмотрите на вывод configure. Если вы увидите в нём следующее:</p>
+<pre><code>$ brew -v install --env=std --build-from-source --cc=gcc-4.2 erlang
+</code></pre>
 
-<p>&hellip;
-checking for debug build of wxWidgets&hellip; checking for wx-config&hellip; /usr/local/bin/wx-config
-checking for wxWidgets version >= 2.8.4 (&mdash;unicode &mdash;debug=yes)&hellip; yes (version 2.9.5)
-checking for wxWidgets static library&hellip; no
-checking for standard build of wxWidgets&hellip; checking for wx-config&hellip; (cached) /usr/local/bin/wx-config
-checking for wxWidgets version >= 2.8.4 (&mdash;unicode &mdash;debug=no)&hellip; yes (version 2.9.5)
-checking for wxWidgets static library&hellip; no
-checking if wxwidgets have opengl support&hellip; yes
-&hellip;</p>
+<p>Чтобы убедиться что Erlang будет использовать вашу свежесобраную библиотеку wxWidgets внимательно посмотрите на вывод configure. Если вы увидите в нём следующее:</p>
+
+<pre><code>...
+checking for debug build of wxWidgets... checking for wx-config... /usr/local/bin/wx-config
+checking for wxWidgets version &gt;= 2.8.4 (--unicode --debug=yes)... yes (version 2.9.5)
+checking for wxWidgets static library... no
+checking for standard build of wxWidgets... checking for wx-config... (cached) /usr/local/bin/wx-config
+checking for wxWidgets version &gt;= 2.8.4 (--unicode --debug=no)... yes (version 2.9.5)
+checking for wxWidgets static library... no
+checking if wxwidgets have opengl support... yes
+...
+</code></pre>
 
 <p>то всё в порядке, Erlang соберётся с поддержкой wxWidgets. Если нет, это повод прервать установку и разобраться в причинах такого результата.</p>
 
 <p>Проверяем что Erlang собрался корректно:</p>
 
-<p>1
-2
-3
-4
-5
-6
-7
-$ erl
-Erlang R16B02 (erts-5.10.3) [64-bit] [smp:4:4] [async-threads:10] [hipe] [kernel-poll:false] [dtrace]
+<pre><code>$ erl
+Erlang R16B02 (erts-5.10.3) [source] [64-bit] [smp:4:4] [async-threads:10] [hipe] [kernel-poll:false] [dtrace]
 Eshell V5.10.3 (abort with ^G)
-1> wx:demo().
+1&gt; wx:demo().
 ok
-2> observer:start().
-ok</p>
+2&gt; observer:start().
+ok
+</code></pre>
 
-<p>Установка из исходников
-Если вы по каким-то причинам не используете homebrew, можно собрать Erlang с поддержкой wxWidgets из исходников:</p>
+<p><img src="/images/blog/screen-shot-2013-09-20-at-8-50-36-pm.png" title="&lsquo;30%&rsquo; &lsquo;30%&rsquo; &lsquo;wx:demo()&rsquo;" >
+<img src="/images/blog/screen-shot-2013-09-20-at-9-55-49-pm.png" title="&lsquo;30%&rsquo; &lsquo;30%&rsquo; &lsquo;observer:start()&rsquo;" ></p>
 
-<p>1
-2
-3
-4
-$ git clone git@github.com:erlang/otp.git erlang-otp
+<h3>Установка из исходников</h3>
+
+<p>Если вы по каким-то причинам не используете homebrew, можно собрать Erlang с поддержкой wxWidgets из исходников:</p>
+
+<pre><code>$ git clone git@github.com:erlang/otp.git erlang-otp
 $ cd erlang-otp
 $ git co OTP_R16B02
-$ ./configure &mdash;disable-debug &mdash;enable-kernel-poll &mdash;enable-threads &mdash;enable-dynamic-ssl-lib &mdash;enable-shared-zlib &mdash;enable-smp-support &mdash;with-dynamic-trace=dtrace &mdash;enable-hipe &mdash;enable-darwin-64bit &mdash;prefix=/opt/erlang &amp;&amp; make &amp;&amp; sudo make install
-Если на предыдущем этапе компиляция и установка не прервались с ошибкой линковки драйвера wx (или какой-то другой), в каталоге /opt/erlang будет лежать Erlang с поддержкой wxWidgets. Проверяем:</p>
+$ ./configure --disable-debug --enable-kernel-poll --enable-threads --enable-dynamic-ssl-lib --enable-shared-zlib --enable-smp-support --with-dynamic-trace=dtrace --enable-hipe --enable-darwin-64bit --prefix=/opt/erlang &amp;&amp; make &amp;&amp; sudo make install
+</code></pre>
 
-<p>1
-2
-3
-4
-5
-6
-7
-8
-$ /opt/erlang/bin/erl
-Erlang R16B02 (erts-5.10.3) [64-bit] [smp:4:4] [async-threads:10] [hipe] [kernel-poll:false] [dtrace]</p>
+<p>Если на предыдущем этапе компиляция и установка не прервались с ошибкой линковки драйвера wx (или какой-то другой), в каталоге <code>/opt/erlang</code> будет лежать Erlang с поддержкой wxWidgets. Проверяем:</p>
 
-<p>Eshell V5.10.3 (abort with ^G)
-1> wx:demo().
+<pre><code>$ /opt/erlang/bin/erl
+Erlang R16B02 (erts-5.10.3) [source] [64-bit] [smp:4:4] [async-threads:10] [hipe] [kernel-poll:false] [dtrace]
+
+Eshell V5.10.3 (abort with ^G)
+1&gt; wx:demo().
 ok
-2> observer:start().
-ok</p>
+2&gt; observer:start().
+ok
+</code></pre>
+
+<p><img src="/images/blog/screen-shot-2013-09-20-at-8-50-36-pm.png" title="&lsquo;30%&rsquo; &lsquo;30%&rsquo; &lsquo;wx:demo()&rsquo;" >
+<img src="/images/blog/screen-shot-2013-09-20-at-9-55-49-pm.png" title="&lsquo;30%&rsquo; &lsquo;30%&rsquo; &lsquo;observer:start()&rsquo;" ></p>
 
 <p>Вот, собственно, и всё.</p>
 ]]></content>
