@@ -4,7 +4,7 @@
   <title><![CDATA[Всячина]]></title>
   <link href="http://kpy3.github.io/atom.xml" rel="self"/>
   <link href="http://kpy3.github.io/"/>
-  <updated>2013-10-04T23:22:20+02:00</updated>
+  <updated>2013-10-07T22:42:14+02:00</updated>
   <id>http://kpy3.github.io/</id>
   <author>
     <name><![CDATA[Сергей Елин]]></name>
@@ -34,7 +34,7 @@
 <pre><code>$ brew install --disable-monolithic wxmac
 </code></pre>
 
-<p>После сборки с этим флажком вывод <code>wx-config –libs</code> должен выглядеть примерно так:</p>
+<p>После сборки с этим флажком вывод <code>wx-config --libs</code> должен выглядеть примерно так:</p>
 
 <pre><code>$ wx-config --libs
 -L/usr/local/Cellar/wxmac/2.9.5.0/lib -framework IOKit 
