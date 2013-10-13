@@ -4,7 +4,7 @@
   <title><![CDATA[Category: wxWidgets | Всячина]]></title>
   <link href="http://kpy3.github.io/blog/categories/wxwidgets/atom.xml" rel="self"/>
   <link href="http://kpy3.github.io/"/>
-  <updated>2013-10-07T22:42:14+02:00</updated>
+  <updated>2013-10-14T00:37:25+04:00</updated>
   <id>http://kpy3.github.io/</id>
   <author>
     <name><![CDATA[Сергей Елин]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Как собрать Erlang c wxWidgets на MacOS X 10.8.x]]></title>
     <link href="http://kpy3.github.io/blog/2013/10/03/kak-sobrat-erlang-c-wxwidgets-na-macos-x-10-dot-8-x/"/>
-    <updated>2013-10-03T17:05:00+02:00</updated>
+    <updated>2013-10-03T17:05:00+04:00</updated>
     <id>http://kpy3.github.io/blog/2013/10/03/kak-sobrat-erlang-c-wxwidgets-na-macos-x-10-dot-8-x</id>
     <content type="html"><![CDATA[<p><strong>UPDATE</strong>: Решение проверено и работает на MacOS X 10.8.5 и XCode/CLT 4.6.3. На XCode/CLT 5.0 beta и MacOS X 10.9 Maverics работать не будет.</p>
 
