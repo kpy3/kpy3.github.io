@@ -29,8 +29,7 @@
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -47,8 +46,14 @@
 
 </head>
 
-<body   class="collapse-sidebar sidebar-footer" >
-  <header role="banner">
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Всячина</a></h1>
+  
+    <h2>Каплями через край</h2>
+  
+</hgroup>
+
 </header>
   <nav role="navigation"><ul class="subscription" data-subscription="rss">
   <li><a href="http://feeds.feedburner.com/yesnme" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
@@ -65,7 +70,6 @@
 <ul class="main-navigation">
   <li><a href="/">Blog</a></li>
   <li><a href="/blog/archives">Archives</a></li>
-  <li><a href="/about">About</a></li>
 </ul>
 
 </nav>
@@ -75,11 +79,9 @@
 <article class="hentry" role="article">
   
   <header>
-  
     
       <h1 class="entry-title">Как собрать Erlang c wxWidgets на MacOS X 10.8.x</h1>
     
-  
     
       <p class="meta">
         
@@ -238,7 +240,7 @@ ok
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://yesn.me/blog/kak-sobrat-erlang-c-wxwidgets-na-macos-x-10-dot-8-x/" data-via="kpy3" data-counturl="http://yesn.me/blog/kak-sobrat-erlang-c-wxwidgets-na-macos-x-10-dot-8-x/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://yesn.me/blog/kak-sobrat-erlang-c-wxwidgets-na-macos-x-10-dot-8-x/" data-via="kpy3" data-counturl="http://yesn.me/blog/kak-sobrat-erlang-c-wxwidgets-na-macos-x-10-dot-8-x/" >Tweet</a>
   
   
   
@@ -315,8 +317,8 @@ ok
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - Сергей Елин <br/>
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a>, customized with <a href="https://github.com/mjhea0/whiterspace">whiterspace</a>.</span>
+  Copyright &copy; 2013 - Сергей Елин -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
 </footer>
@@ -333,7 +335,7 @@ ok
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
@@ -358,7 +360,7 @@ ok
       var twitterWidgets = document.createElement('script');
       twitterWidgets.type = 'text/javascript';
       twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
       document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
     })();
   </script>

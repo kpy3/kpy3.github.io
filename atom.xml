@@ -4,7 +4,7 @@
   <title><![CDATA[Всячина]]></title>
   <link href="http://yesn.me/atom.xml" rel="self"/>
   <link href="http://yesn.me/"/>
-  <updated>2013-10-18T23:27:28+04:00</updated>
+  <updated>2013-10-18T23:29:53+04:00</updated>
   <id>http://yesn.me/</id>
   <author>
     <name><![CDATA[Сергей Елин]]></name>
@@ -14,13 +14,10 @@
 
   
   <entry>
-    
     <title type="html"><![CDATA[Как собрать Erlang c wxWidgets на MacOS X 10.8.x]]></title>
     <link href="http://yesn.me/blog/kak-sobrat-erlang-c-wxwidgets-na-macos-x-10-dot-8-x/"/>
-    
     <updated>2013-10-03T17:05:00+04:00</updated>
     <id>http://yesn.me/blog/kak-sobrat-erlang-c-wxwidgets-na-macos-x-10-dot-8-x</id>
-    
     <content type="html"><![CDATA[<p><strong>UPDATE</strong>: Решение проверено и работает на MacOS X 10.8.5 и XCode/CLT 4.6.3. На XCode/CLT 5.0 beta и MacOS X 10.9 Maverics работать не будет.</p>
 
 <p>У Erlang есть специальное средство получения различных характеристик локальной или удалённой ноды &ndash; <a href="http://www.erlang.org/doc/apps/observer/">observer</a>. Штука замечательная, однако, требующая библиотеки <a href="http://www.wxwidgets.org">wxWidgets</a>, что затрудняет использование данного инструмента на MacOS X, так как официальные релизы последней не очень-то хорошо работают на MacOS X  в 64-bit режиме.  Поэтому сборки Erlang для MacOS X как правило поставляются либо без wx, либо с wx, но он всё равно не работает так как не хватает необходимых библиотек. Ситуация неприятная, но не безнадёжная.</p>
@@ -123,7 +120,6 @@ ok
 
 <p>Вот, собственно, и всё.</p>
 ]]></content>
-    
   </entry>
   
 </feed>
