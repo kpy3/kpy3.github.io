@@ -1,19 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://yes.me/blog/kak-sobrat-erlang-c-wxwidgets-na-macos-x-10-dot-8-x/</loc>
+        <loc>http://yesn.me/blog/kak-sobrat-erlang-c-wxwidgets-na-macos-x-10-dot-8-x/</loc>
         <lastmod>2013-10-18T16:27:38+04:00</lastmod>
     </url>
     <url>
-        <loc>http://yes.me/blog/archives/</loc>
+        <loc>http://yesn.me/blog/archives/</loc>
         <lastmod>2013-10-18T16:27:38+04:00</lastmod>
     </url>
     <url>
-        <loc>http://yes.me/</loc>
+        <loc>http://yesn.me/</loc>
         <lastmod>2013-10-18T16:27:38+04:00</lastmod>
     </url>
     <url>
-        <loc>http://yes.me/robots.txt</loc>
+        <loc>http://yesn.me/robots.txt</loc>
         <lastmod>2013-10-07T12:26:50+04:00</lastmod>
     </url>
 </urlset>

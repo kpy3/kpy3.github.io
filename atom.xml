@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Всячина]]></title>
-  <link href="http://yes.me/atom.xml" rel="self"/>
-  <link href="http://yes.me/"/>
-  <updated>2013-10-18T16:31:59+04:00</updated>
-  <id>http://yes.me/</id>
+  <link href="http://yesn.me/atom.xml" rel="self"/>
+  <link href="http://yesn.me/"/>
+  <updated>2013-10-18T17:39:28+04:00</updated>
+  <id>http://yesn.me/</id>
   <author>
     <name><![CDATA[Сергей Елин]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Как собрать Erlang c wxWidgets на MacOS X 10.8.x]]></title>
-    <link href="http://yes.me/blog/kak-sobrat-erlang-c-wxwidgets-na-macos-x-10-dot-8-x/"/>
+    <link href="http://yesn.me/blog/kak-sobrat-erlang-c-wxwidgets-na-macos-x-10-dot-8-x/"/>
     <updated>2013-10-03T17:05:00+04:00</updated>
-    <id>http://yes.me/blog/kak-sobrat-erlang-c-wxwidgets-na-macos-x-10-dot-8-x</id>
+    <id>http://yesn.me/blog/kak-sobrat-erlang-c-wxwidgets-na-macos-x-10-dot-8-x</id>
     <content type="html"><![CDATA[<p><strong>UPDATE</strong>: Решение проверено и работает на MacOS X 10.8.5 и XCode/CLT 4.6.3. На XCode/CLT 5.0 beta и MacOS X 10.9 Maverics работать не будет.</p>
 
 <p>У Erlang есть специальное средство получения различных характеристик локальной или удалённой ноды &ndash; <a href="http://www.erlang.org/doc/apps/observer/">observer</a>. Штука замечательная, однако, требующая библиотеки <a href="http://www.wxwidgets.org">wxWidgets</a>, что затрудняет использование данного инструмента на MacOS X, так как официальные релизы последней не очень-то хорошо работают на MacOS X  в 64-bit режиме.  Поэтому сборки Erlang для MacOS X как правило поставляются либо без wx, либо с wx, но он всё равно не работает так как не хватает необходимых библиотек. Ситуация неприятная, но не безнадёжная.</p>
@@ -90,8 +90,8 @@ ok
 ok
 </code></pre>
 
-<p><img src="http://yes.me/images/blog/screen-shot-2013-09-20-at-8-50-36-pm.png" title="'wx:demo()'" >
-<img src="http://yes.me/images/blog/screen-shot-2013-09-20-at-9-55-49-pm.png" title="'observer:start()'" ></p>
+<p><img src="http://yesn.me/images/blog/screen-shot-2013-09-20-at-8-50-36-pm.png" title="'wx:demo()'" >
+<img src="http://yesn.me/images/blog/screen-shot-2013-09-20-at-9-55-49-pm.png" title="'observer:start()'" ></p>
 
 <h3>Установка из исходников</h3>
 
@@ -115,8 +115,8 @@ ok
 ok
 </code></pre>
 
-<p><img src="http://yes.me/images/blog/screen-shot-2013-09-20-at-8-50-36-pm.png" title="'wx:demo()'" >
-<img src="http://yes.me/images/blog/screen-shot-2013-09-20-at-9-55-49-pm.png" title="'observer:start()'" ></p>
+<p><img src="http://yesn.me/images/blog/screen-shot-2013-09-20-at-8-50-36-pm.png" title="'wx:demo()'" >
+<img src="http://yesn.me/images/blog/screen-shot-2013-09-20-at-9-55-49-pm.png" title="'observer:start()'" ></p>
 
 <p>Вот, собственно, и всё.</p>
 ]]></content>
