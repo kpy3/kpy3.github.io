@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://kpy3.github.io/sitemap.xml 
+Sitemap: http://yes.me/sitemap.xml 
