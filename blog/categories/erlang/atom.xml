@@ -4,7 +4,7 @@
   <title><![CDATA[Category: erlang | Всячина]]></title>
   <link href="http://yesn.me/blog/categories/erlang/atom.xml" rel="self"/>
   <link href="http://yesn.me/"/>
-  <updated>2013-10-30T11:26:03+04:00</updated>
+  <updated>2013-10-30T11:39:13+04:00</updated>
   <id>http://yesn.me/</id>
   <author>
     <name><![CDATA[Сергей Елин]]></name>
@@ -90,8 +90,9 @@ ok
 ok
 </code></pre>
 
-<p><img src="/images/blog/screen-shot-2013-09-20-at-8-50-36-pm.png" title="&lsquo;wx:demo()&rsquo;" >
-<img src="/images/blog/screen-shot-2013-09-20-at-9-55-49-pm.png" title="&lsquo;observer:start()&rsquo;" ></p>
+<p><img src="/images/blog/screen-shot-2013-09-20-at-8-50-36-pm.png" title="&lsquo;wx:demo()&rsquo;" ></p>
+
+<p><img src="/images/blog/screen-shot-2013-09-20-at-9-55-49-pm.png" title="&lsquo;observer:start()&rsquo;" ></p>
 
 <h3>Установка из исходников</h3>
 
@@ -115,8 +116,9 @@ ok
 ok
 </code></pre>
 
-<p><img src="/images/blog/screen-shot-2013-09-20-at-8-50-36-pm.png" title="&lsquo;wx:demo()&rsquo;" >
-<img src="/images/blog/screen-shot-2013-09-20-at-9-55-49-pm.png" title="&lsquo;observer:start()&rsquo;" ></p>
+<p><img src="/images/blog/screen-shot-2013-09-20-at-8-50-36-pm.png" title="&lsquo;wx:demo()&rsquo;" ></p>
+
+<p><img src="/images/blog/screen-shot-2013-09-20-at-9-55-49-pm.png" title="&lsquo;observer:start()&rsquo;" ></p>
 
 <p>Вот, собственно, и всё.</p>
 ]]></content>
