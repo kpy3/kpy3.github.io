@@ -4,7 +4,7 @@
   <title><![CDATA[Всячина]]></title>
   <link href="http://yesn.me/atom.xml" rel="self"/>
   <link href="http://yesn.me/"/>
-  <updated>2013-10-30T11:52:44+04:00</updated>
+  <updated>2013-11-05T21:04:28+04:00</updated>
   <id>http://yesn.me/</id>
   <author>
     <name><![CDATA[Сергей Елин]]></name>
@@ -12,6 +12,26 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Новый дом]]></title>
+    <link href="http://yesn.me/blog/novyi-dom/"/>
+    <updated>2013-11-05T20:48:00+04:00</updated>
+    <id>http://yesn.me/blog/novyi-dom</id>
+    <content type="html"><![CDATA[<p>Кажется я дозрел до отказа от всяких блогохостингов и переезду на отдельный домен,
+на отдельном сервере со своим движком, который постараюсь доработать в соответствии
+со своими нуждами.</p>
+
+<p>Здесь всё традиционно: octopress на github с disqus для комментариев. В целом годная
+комбинация, правда, требующая некотрых знаний Ruby, SASS и HTML.
+А самое главное &ndash; немножко времени чтобы во всём разобраться.</p>
+
+<p>Мне переход дался просто, во-первых я решил не переносить записи из старых бложиков, по
+крайней мере не все. Во-вторых, я почти не пользовался всякими фичами других движков,
+за исключением публикаций по расписанию, однако, такое можно прикрутить и к octopress,
+если оно понадобится.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Как собрать Erlang c wxWidgets на MacOS X 10.8.x]]></title>
