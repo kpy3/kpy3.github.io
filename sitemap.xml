@@ -1,27 +1,31 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
+        <loc>http://yesn.me/blog/rest-api-best-practices/</loc>
+        <lastmod>2013-12-02T00:01:38+04:00</lastmod>
+    </url>
+    <url>
         <loc>http://yesn.me/blog/kak-sobrat-erlang-c-wxwidgets-na-macos-x-10-dot-8-x/</loc>
-        <lastmod>2013-10-30T11:51:08+04:00</lastmod>
+        <lastmod>2013-12-01T23:52:56+04:00</lastmod>
     </url>
     <url>
         <loc>http://yesn.me/blog/novyi-dom/</loc>
-        <lastmod>2013-11-06T12:52:59+04:00</lastmod>
+        <lastmod>2013-12-01T23:52:56+04:00</lastmod>
     </url>
     <url>
         <loc>http://yesn.me/blog/koie-chto-o-maltie/</loc>
-        <lastmod>2013-11-19T18:50:15+04:00</lastmod>
+        <lastmod>2013-12-01T23:52:56+04:00</lastmod>
     </url>
     <url>
         <loc>http://yesn.me/blog/archives/</loc>
-        <lastmod>2013-11-19T18:50:15+04:00</lastmod>
+        <lastmod>2013-12-02T00:01:38+04:00</lastmod>
     </url>
     <url>
         <loc>http://yesn.me/</loc>
-        <lastmod>2013-11-19T18:50:15+04:00</lastmod>
+        <lastmod>2013-12-02T00:01:38+04:00</lastmod>
     </url>
     <url>
         <loc>http://yesn.me/robots.txt</loc>
-        <lastmod>2013-10-30T11:05:53+04:00</lastmod>
+        <lastmod>2013-12-01T23:50:53+04:00</lastmod>
     </url>
 </urlset>

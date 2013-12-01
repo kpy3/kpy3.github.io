@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: best practices | Всячина]]></title>
+  <link href="http://yesn.me/blog/categories/best-practices/atom.xml" rel="self"/>
+  <link href="http://yesn.me/"/>
+  <updated>2013-12-02T00:03:37+04:00</updated>
+  <id>http://yesn.me/</id>
+  <author>
+    <name><![CDATA[Сергей Елин]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[REST API best practices]]></title>
+    <link href="http://yesn.me/blog/rest-api-best-practices/"/>
+    <updated>2013-09-03T00:12:12+04:00</updated>
+    <id>http://yesn.me/blog/rest-api-best-practices</id>
+    <content type="html"><![CDATA[<p>Весьма интересный доклад про REST API best pracitces, рекомендую</p>
+
+<p><div class="embed-video-container"><iframe src="http://www.youtube.com/embed/hdSrT4yjS1g "></iframe></div></p>
+]]></content>
+  </entry>
+  
+</feed>
