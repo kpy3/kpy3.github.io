@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: личное | Всячина]]></title>
+  <link href="http://yesn.me/blog/categories/lichnoie/atom.xml" rel="self"/>
+  <link href="http://yesn.me/"/>
+  <updated>2013-12-19T23:40:15+04:00</updated>
+  <id>http://yesn.me/</id>
+  <author>
+    <name><![CDATA[Сергей Елин]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Как же это здорово]]></title>
+    <link href="http://yesn.me/blog/kak-zhie-eto-zdorovo/"/>
+    <updated>2013-12-19T23:26:55+04:00</updated>
+    <id>http://yesn.me/blog/kak-zhie-eto-zdorovo</id>
+    <content type="html"><![CDATA[<p>Как же это всё-таки здорово встречаться с бывшими коллегами за бокальчиком чего-нибудь,
+и поболтать несколько часов &ldquo;за жизнь&rdquo;, обсудить какие-то новости, спросить совета&hellip;</p>
+
+<p>Не смотря на то, что кто-то уже &ldquo;ген. дир.&rdquo;, а у кого-то интернет-магазин, кто-то
+уважаемый архитектор, а кто-то, как я, всё так же простой инженер, какими мы были 5 и 10 лет назад,
+когда вот так же собирались перед новым годом, только на корпоративе.</p>
+
+<p>Как же здорово, что за это время, несмотря на новые регалии и достижения, люди остались такими же как
+и прежде веселыми, открытыми и отзычивыми.</p>
+
+<p>Жаль только что с годами народу приходит всё меньше.</p>
+]]></content>
+  </entry>
+  
+</feed>
