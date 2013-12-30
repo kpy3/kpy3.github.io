@@ -1,0 +1,293 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Курс "Машинное обучение" по версии Coursera - Всячина</title>
+  <meta name="author" content="Сергей Елин">
+
+  
+  <meta name="description" content="Когда я первый раз услышал об этом курсе и заглянул в первую попавшуюся книгу по машиному обучению, я подумал:
+&ldquo;Нет, этот курс не для меня& &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://yesn.me/blog/coursera-machine-learning-thoughts">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="http://feeds.feedburner.com/yesnme" rel="alternate" title="Всячина" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-44979313-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Всячина</a></h1>
+  
+    <h2>Каплями через край</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="http://feeds.feedburner.com/yesnme" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:yesn.me" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Курс "Машинное обучение" по версии Coursera</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-30T12:05:44+04:00" pubdate data-updated="true">Понедельник, 30 декабря 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Когда я первый раз услышал об этом курсе и заглянул в первую попавшуюся книгу по машиному обучению, я подумал:
+&ldquo;Нет, этот курс не для меня&rdquo;. Но пройти его очень хотелось, потому как тема интересная, и я начал готовиться. Для
+этого я прошёл курс Statistics One, который прослушал там же, ну и полистал старые учебники по линейной алгебре
+и математическому анализу, которые остались с института.</p>
+
+<!-- more -->
+
+
+<p>Забегая вперёд скажу, что курс рассчитан на широкую аудиторию, материалов к курсу более чем достаточно для прохождения курса.</p>
+
+<p>Я смотрел его в следующем режиме. Сначала видеолекция в электричке, благо могу 50 минут спокойно смотреть (с перерывом на контролёра).
+Если не выспался, досматривал вечером, если устал &ndash; досматривал в электричке следующим утром. После окончания просмотра опросник.
+Письменное задание как правило делал дома, а значит на следующий день, стараясь не отнимать у себя время на сон. Если не получалось,
+в запасе было несколько дней, разобраться в проблемах с заданием.</p>
+
+<p>В среднем на письменное решение у меня уходило около получаса-часа в неделю, за исключением двух заданий, где я запутался в умножениях матриц и
+получал неверный результат на конрольных данных. Пришлось развернуть умножения в ряд циклов for, чтобы понять где ошибка, а потом
+свернуть обратно, чтобы быстро считать (в <a href="http://www.gnu.org/software/octave/">GNU Octave</a> for-ы медленны по сравнению с векторизированными вычислениями). Эти два задания я
+делал часа по три-четыре.</p>
+
+<p>Итого, получилось полноценно прослушать один курс, что, на мой взгляд, вполне нормально, имея семью с двумя детьми.</p>
+
+<p>Задания были интересными и не очень сложными, весь матан остался в учебниках, если кто-то хотел &ndash; мог изучить его дополнительно.
+Но для курса этого не нужно (по крайней мере мне не пригодилось), вполне достаточно видео лекций и подсказок к заданию. Форум как-то
+не пригодился совсем. Перед курсом лучше ознакомится
+с английской терминологией (если это ваш первый англоязычный курс), иначе могут быть конфузы в понимании терминов.</p>
+
+<p><a href="http://www.gnu.org/software/octave/">GNU Octave</a> оказался приятной системой, в которой интересно играть с данными (по крайней мере в рамках курса). Во многих моментах
+работа с данными интуитивно понятна, на начальном этапе можно прочитать его <a href="http://www.gnu.org/software/octave/doc/interpreter/">официальное руководство</a> или <a href="http://ru.wikibooks.org/wiki/GNU_Octave/%D0%9A%D0%BE%D1%80%D0%BE%D1%82%D0%BA%D0%BE%D0%B5_%D0%B7%D0%BD%D0%B0%D0%BA%D0%BE%D0%BC%D1%81%D1%82%D0%B2%D0%BE_%D1%81_GNU_Octave">какое-нибудь введение</a> и его скорее вcего окажется достаточно.</p>
+
+<p>Оценку свою я не знаю, так как официально курс завершится 6 января 2014. Подождём. :)</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Сергей Елин</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-30T12:05:44+04:00" pubdate data-updated="true">Понедельник, 30 декабря 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/coursera/'>coursera</a>, <a class='category' href='/blog/categories/on-line-courses/'>on-line courses</a>, <a class='category' href='/blog/categories/samoobrazovaniie/'>самообразование</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://yesn.me/blog/coursera-machine-learning-thoughts/" data-via="kpy3" data-counturl="http://yesn.me/blog/coursera-machine-learning-thoughts/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/kak-zhie-eto-zdorovo/" title="Previous Post: Как же это здорово">&laquo; Как же это здорово</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/coursera-machine-learning-thoughts/">Курс "Машинное обучение" по версии Coursera</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/kak-zhie-eto-zdorovo/">Как же это здорово</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/koie-chto-o-maltie/">Кое-что о Мальте</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/novyi-dom/">Новый дом</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/kak-sobrat-erlang-c-wxwidgets-na-macos-x-10-dot-8-x/">Как собрать Erlang c wxWidgets на MacOS X 10.8.x</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Сергей Елин -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'yesn-blog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://yesn.me/blog/coursera-machine-learning-thoughts/';
+        var disqus_url = 'http://yesn.me/blog/coursera-machine-learning-thoughts/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
