@@ -4,7 +4,7 @@
   <title><![CDATA[Category: самообразование | Всячина]]></title>
   <link href="http://yesn.me/blog/categories/samoobrazovaniie/atom.xml" rel="self"/>
   <link href="http://yesn.me/"/>
-  <updated>2014-01-01T21:51:52+04:00</updated>
+  <updated>2014-01-01T21:54:08+04:00</updated>
   <id>http://yesn.me/</id>
   <author>
     <name><![CDATA[Сергей Елин]]></name>
@@ -12,6 +12,40 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Интересные ресурсы о машинном обучении]]></title>
+    <link href="http://yesn.me/blog/machine-learning-resourses/"/>
+    <updated>2014-01-01T10:46:18+04:00</updated>
+    <id>http://yesn.me/blog/machine-learning-resourses</id>
+    <content type="html"><![CDATA[<p>Здесь я решил собрать найденные в <a href="/blog/coursera-machine-learning-thoughts">процессе обучения на курсе по машинному обучению</a> ресурсы, которые показались
+мне интересными и могут быть полезными для углубленного изучения данной темы.</p>
+
+<!-- more -->
+
+
+<h2>Видео</h2>
+
+<p>Начну с видео. Во-первых, лекции автора курса Andrew Ng по курсу Машинного обучения (<a href="http://www.stanford.edu/class/cs229/">CS 229</a>)
+можно <a href="http://www.youtube.com/view_play_list?p=A89DCFA6ADACE599">посмотреть на youtube</a> (он же в режиме <a href="http://www.youtube.com/watch?v=UzxYlbK2c7E&amp;list=PLA89DCFA6ADACE599">нонстоп</a>).</p>
+
+<p>Во-вторых, не менее интересным, на мой взгляд, является <a href="http://www.youtube.com/playlist?list=PLD63A284B7615313A">курс CS-156 профессора Yaser Abu-Mostafa из Калтеха</a> (он же в режиме <a href="http://www.youtube.com/watch?v=mbyG85GZ0PI&amp;list=PLD63A284B7615313A">нонстоп</a>).</p>
+
+<p>Кроме обозначеных курсов доступен курс <a href="http://www.lektorium.tv/speaker/?id=2948">лекций по Машинному обучению</a>, который читает Игорь Кураленок из Яндекса. Курс доступен на русском языке.</p>
+
+<p>Уверен что доступных видеоматериалов гораздо больше.</p>
+
+<h2>Литература</h2>
+
+<p>Данная дисциплина набирает популярность за академическими стенами, поэтому недостатка в доступной литературе не ощущается. Тот же амазон
+<a href="http://www.amazon.com/s/ref=nb_sb_ss_i_0_8?url=search-alias%3Daps&amp;field-keywords=machine+learning&amp;sprefix=machine+%2Caps%2C378">предлагает сотни позиций на простой поиск по теме</a>.
+Чтобы не запутаться и не потеряться в теме, можно следовать, например, <a href="http://benmabey.com/2011/10/07/faq-what-machine-learning-book-should-i-start-with.html">этой рекомендации</a>, и начать с книг попроще. Перед началом курса я полистал <a href="http://www.amazon.com/Machine-Learning-Hackers-Drew-Conway/dp/1449303714?tag=viglink123310-20">Machine Learning for Hackers</a>, сейчас изучаю книгу Кефина Мёрфи <a href="http://www.amazon.com/Machine-Learning-Probabilistic-Perspective-Computation/dp/0262018020">Machine Learning: A Probabilistic Perspective</a>, это обширная монография, неплохое введение и справочник по различным аспектам машинного обучения.</p>
+
+<h2>Сетевые ресурсы</h2>
+
+<p>Сетевых ресурсов по этой теме столько, что остаётся отправить заинтересованного читателя в <a href="https://www.google.ru/#newwindow=1&amp;q=machine+learning">google</a> чтобы найти там что-то на свой вкус.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Курс "Машинное обучение" по версии Coursera]]></title>
