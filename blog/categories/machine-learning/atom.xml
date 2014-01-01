@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: coursera | Всячина]]></title>
-  <link href="http://yesn.me/blog/categories/coursera/atom.xml" rel="self"/>
+  <title><![CDATA[Category: machine learning | Всячина]]></title>
+  <link href="http://yesn.me/blog/categories/machine-learning/atom.xml" rel="self"/>
   <link href="http://yesn.me/"/>
   <updated>2014-01-01T10:48:54+04:00</updated>
   <id>http://yesn.me/</id>
