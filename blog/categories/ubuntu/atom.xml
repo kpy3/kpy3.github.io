@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: ubuntu | Всячина]]></title>
+  <link href="http://yesn.me/blog/categories/ubuntu/atom.xml" rel="self"/>
+  <link href="http://yesn.me/"/>
+  <updated>2014-01-20T08:49:38+04:00</updated>
+  <id>http://yesn.me/</id>
+  <author>
+    <name><![CDATA[Сергей Елин]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Грустное и не очень]]></title>
+    <link href="http://yesn.me/blog/ghrustnoie-i-nie-ochien/"/>
+    <updated>2014-01-20T08:31:38+04:00</updated>
+    <id>http://yesn.me/blog/ghrustnoie-i-nie-ochien</id>
+    <content type="html"><![CDATA[<p>На выходных расчехлил свой старый AMD Athlon X2 с GeForce 6600 на борту &ndash; чтобы киношки смотреть и для бекапов,
+в нём RAID 10 стоит терабайтный, немного по современным меркам, но мне пока хватает.</p>
+
+<!-- more -->
+
+
+<p>Пользуясь моментом решил обновить систему с Ubuntu 12.04 до 13.10. Обновление 12.04 до 13.04 прошло весело и
+без проблем, 13.04 до 13.10, субъекивно, заняло времени раза в два больше чем предыдущее и полезли
+проблемы с драйверами видео, которые, к счастью, удалось решить. После апгрейда выяснилось что
+даже домашнее видео теперь особо не посмотришь &ndash; не тянет видео работу на полный экран. Учитывая,
+что раньше таких проблем не наблюдал, склонен грешить на драйвера. Ну и в целом ощущаются тормоза
+работы с другими программами. В общем, Ubuntu 13.10 не для старого железа.</p>
+
+<p>Иногда мне кажется что ведущие производители дистрибутивов Linux в сговоре с теми же производителями
+железа что и Microsoft.</p>
+
+<p>Горькую пилюлю подсластил выход FreeBSD 10, на clang с DTrace и ROOT на ZFS из коробки. Завёл себе зверюшку в
+зоопарке поиграться.</p>
+]]></content>
+  </entry>
+  
+</feed>
