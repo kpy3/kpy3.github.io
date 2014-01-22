@@ -4,7 +4,7 @@
   <title><![CDATA[Всячина]]></title>
   <link href="http://yesn.me/atom.xml" rel="self"/>
   <link href="http://yesn.me/"/>
-  <updated>2014-01-20T08:49:38+04:00</updated>
+  <updated>2014-01-22T14:14:01+04:00</updated>
   <id>http://yesn.me/</id>
   <author>
     <name><![CDATA[Сергей Елин]]></name>
@@ -12,6 +12,19 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Подкаст о непопулярных темах]]></title>
+    <link href="http://yesn.me/blog/podkast-o-niepopuliarnykh-tiemakh/"/>
+    <updated>2014-01-22T14:00:14+04:00</updated>
+    <id>http://yesn.me/blog/podkast-o-niepopuliarnykh-tiemakh</id>
+    <content type="html"><![CDATA[<p>Мои коллеги <a href="http://eax.me">Саша Алексеев</a> и Валера Мелешкин <a href="http://eax.me/eaxcast-s01e01/">начали записывать подкаст</a> о функциональном
+программировании вообще и Erlang, Haskell, Scala и других немейнстримовых языках и технологиях, тем самым пытаясь
+заполнить некий вакуум в медийном пространстве. Первый выпуск можно <a href="http://rpod.ru/get/318610/287911/download/eaxcast-s01e01.mp3">скачать тут</a>.</p>
+
+<p>С почином, коллеги!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Грустное и не очень]]></title>
