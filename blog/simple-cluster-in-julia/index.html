@@ -5,11 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>REST API best practices - Всячина</title>
+  <title>Как поднять простой кластер в julia - Всячина</title>
   <meta name="author" content="Сергей Елин">
 
   
-  <meta name="description" content="Весьма интересный доклад про REST API best pracitces, рекомендую ">
+  <meta name="description" content="Julia &ndash; молодой, но, на мой взгляд, перспективный
+язык, созданный для решения вычислительных задач. Сочетает в себе простой синтаксис
+с &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://yesn.me/blog/rest-api-best-practices">
+  <link rel="canonical" href="http://yesn.me/blog/simple-cluster-in-julia">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="http://feeds.feedburner.com/yesnme" rel="alternate" title="Всячина" type="application/atom+xml">
@@ -80,7 +82,7 @@
   
   <header>
     
-      <h1 class="entry-title">REST API best practices</h1>
+      <h1 class="entry-title">Как поднять простой кластер в julia</h1>
     
     
       <p class="meta">
@@ -96,19 +98,78 @@
   
 
 
-<time datetime="2013-09-03T00:12:12+04:00" pubdate data-updated="true">Вторник,  3 сентября 2013</time>
+<time datetime="2014-01-23T11:24:32+04:00" pubdate data-updated="true">Четверг, 23 января 2014</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>Весьма интересный доклад про REST API best pracitces, рекомендую</p>
+<div class="entry-content"><p><a href="http://julialang.org">Julia</a> &ndash; молодой, но, на мой взгляд, перспективный
+язык, созданный для решения вычислительных задач. Сочетает в себе простой синтаксис
+с возможностью параллельного и распределенного решения вычислительных задач прямо из коробки, а так же
+наличием макросов в стиле Lisp, мощных библиотек и активного комьюнити.</p>
 
-<div class="embed-video-container"><iframe src="http://www.youtube.com/embed/hdSrT4yjS1g "></iframe></div>
+<p>C некоторыми особенностями языка можно ознакомиться в <a href="http://www.r-bloggers.com/a-beginners-look-at-julia/">этой статье на r-bloggers</a>, а тем, кто знает R возможно будет интересен <a href="http://www.stat.wisc.edu/~bates/JuliaForRProgrammers.pdf">этот доклад</a>.</p>
+
+<p>Меня же язык заинтересовал как возможная альтернатива GNU Octave, более быстрая и
+с возможностью прозрачного распараллеливания и распределения решаемой задачи.</p>
+
+<!-- more -->
 
 
+<p>Итак, для того чтобы поднять простой вычислительный кластер на нескольких серверах необходимо
+совершить несколько простых действий.</p>
 
+<p>Во-первых, необходимо установить пакет julia на тех серверах, из которых вы хотите собрать кластер.
+Для Ububtu готовые пакеты можно взять из ppa:staticfloat:</p>
+
+<pre><code># add-apt-repository ppa:staticfloat/julianightlies
+# add-apt-repository ppa:staticfloat/juliareleases
+</code></pre>
+
+<p>первый подключит репозиторий с ночными сборками (julia активно развивается), второй подключит репозиторий,
+в котором есть только релизы.</p>
+
+<p>Далее стандартно:</p>
+
+<pre><code># apt-get update &amp;&amp; apt-get install julia
+</code></pre>
+
+<p>Во-вторых, необходимо настроить беспарольный ssh-доступ между машинами. Убедитесь что он рабтает.</p>
+
+<p>В-третьих, необходимо создать простой файл, в котором нужно перечислить соединения с удалёнными серверами.
+Если вы хотите использовать более одного ядра на удалённом сервере, стоит добавить несколько строк с именем
+этого сервера. У меня файл выглядит так:</p>
+
+<pre><code>$ cat cluster
+se@bocore.test.ghcg.com
+se@bocore.test.ghcg.com
+se@bocore.test.ghcg.com
+se@bocore.test.ghcg.com
+</code></pre>
+
+<p>Иными словами, я хочу запустить 4 процесса на сервере bocore.test.ghcg.com. Всё, ваш кластер готов к работе.
+Для запуска нужно ввести команду:</p>
+
+<pre><code>$ julia -p 4 --machinefile cluster
+</code></pre>
+
+<p>Здесь -p 4 означает что julia запустит 4 процесса на локальной машине, плюс установит соединения со всеми
+хостами, указанными в файле cluster.</p>
+
+<p>Проверить работоспособность кластера можно простым примером:</p>
+
+<pre><code>julia&gt; nheads = @parallel (+) for i=1:20000000000
+     int(randbool())
+end
+10000246714
+</code></pre>
+
+<p>При выполнении примера локально и на удаленном сервере будет наблюдаться аномальная активность у процессов,
+в которых запущена julia.</p>
+
+<p>Кластер готов к работе.</p>
 </div>
 
 
@@ -131,12 +192,12 @@
   
 
 
-<time datetime="2013-09-03T00:12:12+04:00" pubdate data-updated="true">Вторник,  3 сентября 2013</time>
+<time datetime="2014-01-23T11:24:32+04:00" pubdate data-updated="true">Четверг, 23 января 2014</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/rest-api/'>REST API</a>, <a class='category' href='/blog/categories/best-practices/'>best practices</a>, <a class='category' href='/blog/categories/video/'>video</a>
+    <a class='category' href='/blog/categories/cluster/'>cluster</a>, <a class='category' href='/blog/categories/howto/'>howto</a>, <a class='category' href='/blog/categories/julia/'>julia</a>
   
 </span>
 
@@ -145,7 +206,7 @@
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://yesn.me/blog/rest-api-best-practices/" data-via="kpy3" data-counturl="http://yesn.me/blog/rest-api-best-practices/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://yesn.me/blog/simple-cluster-in-julia/" data-via="kpy3" data-counturl="http://yesn.me/blog/simple-cluster-in-julia/" >Tweet</a>
   
   
   
@@ -156,8 +217,8 @@
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/podkast-o-niepopuliarnykh-tiemakh/" title="Previous Post: Подкаст о непопулярных темах">&laquo; Подкаст о непопулярных темах</a>
       
-        <a class="basic-alignment right" href="/blog/kak-sobrat-erlang-c-wxwidgets-na-macos-x-10-dot-8-x/" title="Next Post: Как собрать Erlang c wxWidgets на MacOS X 10.8.x">Как собрать Erlang c wxWidgets на MacOS X 10.8.x &raquo;</a>
       
     </p>
   </footer>
@@ -178,15 +239,7 @@
     <ul class="posts">
     
         <li class="related">
-        <a href="/blog/kak-zhie-eto-zdorovo/">Как же это здорово</a>
-        </li>
-    
-        <li class="related">
-        <a href="/blog/novyi-dom/">Новый дом</a>
-        </li>
-    
-        <li class="related">
-        <a href="/blog/koie-chto-o-maltie/">Кое-что о Мальте</a>
+        <a href="/blog/coursera-machine-learning-thoughts/">Курс "Машинное обучение" по версии Coursera</a>
         </li>
     
         <li class="related">
@@ -194,7 +247,15 @@
         </li>
     
         <li class="related">
-        <a href="/blog/coursera-machine-learning-thoughts/">Курс "Машинное обучение" по версии Coursera</a>
+        <a href="/blog/koie-chto-o-maltie/">Кое-что о Мальте</a>
+        </li>
+    
+        <li class="related">
+        <a href="/blog/machine-learning-resourses/">Интересные ресурсы о машинном обучении</a>
+        </li>
+    
+        <li class="related">
+        <a href="/blog/ghrustnoie-i-nie-ochien/">Грустное и не очень</a>
         </li>
     
     </ul>
@@ -245,8 +306,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://yesn.me/blog/rest-api-best-practices/';
-        var disqus_url = 'http://yesn.me/blog/rest-api-best-practices/';
+        var disqus_identifier = 'http://yesn.me/blog/simple-cluster-in-julia/';
+        var disqus_url = 'http://yesn.me/blog/simple-cluster-in-julia/';
         var disqus_script = 'embed.js';
       
     (function () {

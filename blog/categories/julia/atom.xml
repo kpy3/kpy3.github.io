@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: julia | Всячина]]></title>
+  <link href="http://yesn.me/blog/categories/julia/atom.xml" rel="self"/>
+  <link href="http://yesn.me/"/>
+  <updated>2014-01-23T12:50:51+04:00</updated>
+  <id>http://yesn.me/</id>
+  <author>
+    <name><![CDATA[Сергей Елин]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Как поднять простой кластер в julia]]></title>
+    <link href="http://yesn.me/blog/simple-cluster-in-julia/"/>
+    <updated>2014-01-23T11:24:32+04:00</updated>
+    <id>http://yesn.me/blog/simple-cluster-in-julia</id>
+    <content type="html"><![CDATA[<p><a href="http://julialang.org">Julia</a> &ndash; молодой, но, на мой взгляд, перспективный
+язык, созданный для решения вычислительных задач. Сочетает в себе простой синтаксис
+с возможностью параллельного и распределенного решения вычислительных задач прямо из коробки, а так же
+наличием макросов в стиле Lisp, мощных библиотек и активного комьюнити.</p>
+
+<p>C некоторыми особенностями языка можно ознакомиться в <a href="http://www.r-bloggers.com/a-beginners-look-at-julia/">этой статье на r-bloggers</a>, а тем, кто знает R возможно будет интересен <a href="http://www.stat.wisc.edu/~bates/JuliaForRProgrammers.pdf">этот доклад</a>.</p>
+
+<p>Меня же язык заинтересовал как возможная альтернатива GNU Octave, более быстрая и
+с возможностью прозрачного распараллеливания и распределения решаемой задачи.</p>
+
+<!-- more -->
+
+
+<p>Итак, для того чтобы поднять простой вычислительный кластер на нескольких серверах необходимо
+совершить несколько простых действий.</p>
+
+<p>Во-первых, необходимо установить пакет julia на тех серверах, из которых вы хотите собрать кластер.
+Для Ububtu готовые пакеты можно взять из ppa:staticfloat:</p>
+
+<pre><code># add-apt-repository ppa:staticfloat/julianightlies
+# add-apt-repository ppa:staticfloat/juliareleases
+</code></pre>
+
+<p>первый подключит репозиторий с ночными сборками (julia активно развивается), второй подключит репозиторий,
+в котором есть только релизы.</p>
+
+<p>Далее стандартно:</p>
+
+<pre><code># apt-get update &amp;&amp; apt-get install julia
+</code></pre>
+
+<p>Во-вторых, необходимо настроить беспарольный ssh-доступ между машинами. Убедитесь что он рабтает.</p>
+
+<p>В-третьих, необходимо создать простой файл, в котором нужно перечислить соединения с удалёнными серверами.
+Если вы хотите использовать более одного ядра на удалённом сервере, стоит добавить несколько строк с именем
+этого сервера. У меня файл выглядит так:</p>
+
+<pre><code>$ cat cluster
+se@bocore.test.ghcg.com
+se@bocore.test.ghcg.com
+se@bocore.test.ghcg.com
+se@bocore.test.ghcg.com
+</code></pre>
+
+<p>Иными словами, я хочу запустить 4 процесса на сервере bocore.test.ghcg.com. Всё, ваш кластер готов к работе.
+Для запуска нужно ввести команду:</p>
+
+<pre><code>$ julia -p 4 --machinefile cluster
+</code></pre>
+
+<p>Здесь -p 4 означает что julia запустит 4 процесса на локальной машине, плюс установит соединения со всеми
+хостами, указанными в файле cluster.</p>
+
+<p>Проверить работоспособность кластера можно простым примером:</p>
+
+<pre><code>julia&gt; nheads = @parallel (+) for i=1:20000000000
+     int(randbool())
+end
+10000246714
+</code></pre>
+
+<p>При выполнении примера локально и на удаленном сервере будет наблюдаться аномальная активность у процессов,
+в которых запущена julia.</p>
+
+<p>Кластер готов к работе.</p>
+]]></content>
+  </entry>
+  
+</feed>
