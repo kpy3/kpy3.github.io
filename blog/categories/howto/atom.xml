@@ -4,7 +4,7 @@
   <title><![CDATA[Category: howto | Всячина]]></title>
   <link href="http://yesn.me/blog/categories/howto/atom.xml" rel="self"/>
   <link href="http://yesn.me/"/>
-  <updated>2014-01-23T12:50:51+04:00</updated>
+  <updated>2014-01-24T22:20:37+04:00</updated>
   <id>http://yesn.me/</id>
   <author>
     <name><![CDATA[Сергей Елин]]></name>
@@ -56,13 +56,13 @@
 этого сервера. У меня файл выглядит так:</p>
 
 <pre><code>$ cat cluster
-se@bocore.test.ghcg.com
-se@bocore.test.ghcg.com
-se@bocore.test.ghcg.com
-se@bocore.test.ghcg.com
+se@zoo.yesn.me
+se@zoo.yesn.me
+se@zoo.yesn.me
+se@zoo.yesn.me
 </code></pre>
 
-<p>Иными словами, я хочу запустить 4 процесса на сервере bocore.test.ghcg.com. Всё, ваш кластер готов к работе.
+<p>Иными словами, я хочу запустить 4 процесса на сервере zoo.yesn.me. Всё, ваш кластер готов к работе.
 Для запуска нужно ввести команду:</p>
 
 <pre><code>$ julia -p 4 --machinefile cluster
